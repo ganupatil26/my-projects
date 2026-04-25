@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Comet Run</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Arcade</p>
+          <h1>Comet Run</h1>
+        </div>
+
+        <div class="meters" aria-label="Game stats">
+          <div>
+            <span>Score</span>
+            <strong id="scoreValue">0</strong>
+          </div>
+          <div>
+            <span>Best</span>
+            <strong id="bestValue">0</strong>
+          </div>
+          <div>
+            <span>Lives</span>
+            <strong id="livesValue">3</strong>
+          </div>
+          <div>
+            <span>Level</span>
+            <strong id="levelValue">1</strong>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="pauseButton" class="icon-button" type="button" aria-label="Pause">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 5h3v14H8zM13 5h3v14h-3z"></path>
+            </svg>
+          </button>
+          <button id="restartButton" class="icon-button" type="button" aria-label="Restart">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.7 6.3A8 8 0 1 0 20 12h-2a6 6 0 1 1-1.8-4.3L13 11h8V3z"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <section class="arena" aria-label="Comet Run game">
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="overlay" class="overlay">
+          <div class="overlay-panel">
+            <p id="stateLabel">Ready</p>
+            <h2 id="stateTitle">Comet Run</h2>
+            <button id="primaryButton" class="primary-button" type="button">Start</button>
+          </div>
+        </div>
+
+        <div class="touch-controls" aria-label="Touch controls">
+          <button class="control up" type="button" data-dir="up" aria-label="Move up">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6 5 15h14z"></path></svg>
+          </button>
+          <button class="control left" type="button" data-dir="left" aria-label="Move left">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 12 9-7v14z"></path></svg>
+          </button>
+          <button class="control down" type="button" data-dir="down" aria-label="Move down">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 18 7-9H5z"></path></svg>
+          </button>
+          <button class="control right" type="button" data-dir="right" aria-label="Move right">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m18 12-9 7V5z"></path></svg>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
